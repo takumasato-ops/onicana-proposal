@@ -574,9 +574,9 @@
   <div class="section-header">
     <div class="section-num">B</div>
     <div class="section-title-block">
-      <p class="section-tag">Secretary Bot — Messenger Integration</p>
+      <p class="section-tag">Secretary Bot — Google Workspace Integration</p>
       <h2 class="section-title">秘書ボット設計図</h2>
-      <p class="section-desc">Messengerを起点に、営業マンの稼働をマネジメントへ自動共有する仕組み</p>
+      <p class="section-desc">Google Workspaceを起点に、営業マンの稼働をマネジメントへ自動共有する仕組み</p>
       <p style="margin-top:10px; display:inline-block; background:rgba(232,87,60,0.08); border:1px solid rgba(232,87,60,0.25); border-radius:6px; padding:6px 14px; font-size:13px; color:var(--accent); font-weight:500;">最終的に研修を受けていただき、作成できるノウハウを手に入れていただきます</p>
     </div>
   </div>
@@ -595,7 +595,7 @@
               <p class="bot-step-title">商談終了を報告</p>
               <span class="bot-step-tag">手動 · 30秒</span>
             </div>
-            <p class="bot-step-desc">営業マンがチャットボットに商談結果を送信（文字起こし情報をコピペするのみ）</p>
+            <p class="bot-step-desc">Google MeetのGeminiが商談を文字起こし→その情報をGeminiにコピペするのみ</p>
           </div>
         </div>
         <div class="bot-step">
@@ -604,10 +604,10 @@
           </div>
           <div class="bot-step-body">
             <div class="bot-step-meta">
-              <p class="bot-step-title">お礼文を自動生成</p>
-              <span class="bot-step-tag auto">自動化</span>
+              <p class="bot-step-title">お礼文＋日程調整を自動生成</p>
+              <span class="bot-step-tag auto">半自動化</span>
             </div>
-            <p class="bot-step-desc">商談内容をもとに、各クライアントに合わせたお礼文をAIが即座に作成</p>
+            <p class="bot-step-desc">Geminiが各クライアントに合わせたお礼文と次回候補日を1通にまとめてGmailの下書きに自動保存。内容確認後に送信<br><span style="font-size:11px; color:#aaa;">※メールの内容確認と送信漏れを防止するために、あえて半自動で設計</span></p>
           </div>
         </div>
         <div class="bot-step">
@@ -616,10 +616,10 @@
           </div>
           <div class="bot-step-body">
             <div class="bot-step-meta">
-              <p class="bot-step-title">進捗を自動集計・共有</p>
+              <p class="bot-step-title">スプレッドシートに自動記録</p>
               <span class="bot-step-tag auto">半自動化</span>
             </div>
-            <p class="bot-step-desc">下書きを確認→送信し、チャットで「メール送信完了」と送るとNotionのスプレッドシートに自動記録＆役員・マネジメントへ日次サマリーを自動送信<br><span style="font-size:11px; color:#aaa;">※自動化できますが、メールの内容確認と送信漏れを防止するために、あえて半自動で設計</span></p>
+            <p class="bot-step-desc">送信後、Geminiに「メール送信完了」と入力するとGoogleスプレッドシートに商談データ（担当者・日時・内容・結果）を自動記録</p>
           </div>
         </div>
         <div class="bot-step">
@@ -628,10 +628,10 @@
           </div>
           <div class="bot-step-body">
             <div class="bot-step-meta">
-              <p class="bot-step-title">次回アポの日程調整</p>
-              <span class="bot-step-tag auto">半自動化</span>
+              <p class="bot-step-title">Googleドキュメントに全員のサマリーを自動転記</p>
+              <span class="bot-step-tag auto">自動化</span>
             </div>
-            <p class="bot-step-desc">日次サマリーが自動送信されると、次回の候補日が提示され、クライアント様へのメッセージを自動作成。「メール送信完了」と送るとカレンダーへ自動登録される</p>
+            <p class="bot-step-desc">毎日19時にその日の全営業マンの商談サマリーをGoogleドキュメントへ自動転記（日付タブ別に管理）。役員・マネジメント層がいつでも確認できる状態に</p>
           </div>
         </div>
         <div class="bot-step">
@@ -643,7 +643,7 @@
               <p class="bot-step-title">役員レポートを自動生成</p>
               <span class="bot-step-tag auto">自動化</span>
             </div>
-            <p class="bot-step-desc">全員の商談数・成約見込み・フォロー状況を役員側へ毎日自動配信</p>
+            <p class="bot-step-desc">全員の商談数・成約見込み・フォロー状況をGoogle Chatで役員側へ毎日自動配信</p>
           </div>
         </div>
       </div>
@@ -653,38 +653,38 @@
     <div>
       <div class="messenger-mock">
         <div class="messenger-header">
-          <div class="messenger-avatar">AI</div>
+          <div class="messenger-avatar" style="background:#4285F4;">G</div>
           <div>
-            <p class="messenger-name">オニカナ秘書ボット</p>
-            <p class="messenger-status">● オンライン</p>
+            <p class="messenger-name">Gemini（オニカナ専用）</p>
+            <p class="messenger-status">● Google Workspace 連携中</p>
           </div>
         </div>
         <div class="msg-wrap">
-          <div class="msg bot">田中さん、お疲れ様です！<br>本日の商談結果を教えてください。<br>（社名・結果・温度感でOKです）</div>
-          <div class="msg user">株式会社◯◯、代表の山田さん。提案OK、来週クロージング。かなり熱い</div>
-          <div class="msg bot">ありがとうございます！<br><br>お礼メッセージを作成しました。<br><br>「山田様、本日はお時間いただきありがとうございました。ご提案内容についてご共感いただけたこと、大変嬉しく思います…」<br><br>送信しますか？ / 修正しますか？</div>
-          <div class="msg user">送信して！</div>
-          <div class="msg bot">送信完了！<br>次回アポは来週ご希望でしたね。<br>候補日を送りますか？</div>
-          <p class="msg-time">Notionに自動記録済 ✓</p>
+          <div class="msg bot">お疲れ様です。商談の文字起こしをここに貼り付けてください。お礼文と次回候補日を作成します。</div>
+          <div class="msg user">（Google Meetの文字起こしをコピペ）山田様との商談。提案OK、来週クロージング予定。</div>
+          <div class="msg bot">Gmailの下書きを作成しました。<br><br>件名：本日はありがとうございました<br>「山田様、本日はお時間をいただきありがとうございました。ご提案内容についてご共感いただけたこと…<br><br>【次回候補日】<br>・4/15（火）14:00〜<br>・4/16（水）11:00〜」<br><br>確認後、Gmailから送信してください。</div>
+          <div class="msg user">メール送信完了</div>
+          <div class="msg bot">スプレッドシートに記録しました。<br>本日19時に全員のサマリーをGoogleドキュメントへ転記します。</div>
+          <p class="msg-time">Googleスプレッドシートに自動記録済 ✓</p>
         </div>
       </div>
 
       <div class="bot-features">
         <div class="bot-feature">
           <p class="bot-feature-title">役員向け日次レポート</p>
-          <p class="bot-feature-desc">全員の商談数・成約見込み・フォロー状況を毎日18時に自動配信</p>
+          <p class="bot-feature-desc">全員の商談数・成約見込み・フォロー状況をGoogle Chatで毎日19時に自動配信</p>
         </div>
         <div class="bot-feature">
-          <p class="bot-feature-title">Notion連携</p>
-          <p class="bot-feature-desc">既存のスプレッドシート管理に自動記録。データ移行不要</p>
+          <p class="bot-feature-title">Googleスプレッドシート連携</p>
+          <p class="bot-feature-desc">既存のスプレッドシートに自動記録。Googleドキュメントへ日次サマリーを自動転記</p>
         </div>
         <div class="bot-feature">
           <p class="bot-feature-title">50社提案補助AI</p>
-          <p class="bot-feature-desc">提携先サービス情報をNotionから参照し、最適な提案を即座に出力</p>
+          <p class="bot-feature-desc">提携先サービス情報をGoogleスプレッドシートから参照し、最適な提案を即座に出力</p>
         </div>
         <div class="bot-feature">
-          <p class="bot-feature-title">Messenger対応</p>
-          <p class="bot-feature-desc">普段使いのMessengerだけで完結。新しいツール習得コストゼロ</p>
+          <p class="bot-feature-title">Google Workspace対応</p>
+          <p class="bot-feature-desc">Meet・Gemini・Gmail・スプレッドシート・カレンダーが一気通貫で連携</p>
         </div>
       </div>
     </div>
@@ -800,7 +800,7 @@
         <div class="wf-arrow">↓</div>
         <div class="wf-step">
           <p class="wf-step-label after">AFTER</p>
-          <p class="wf-step-text after-text">クライアント情報を入力するだけで、Notionの提携先DBを参照し最適な提案パターンをAIが即出力</p>
+          <p class="wf-step-text after-text">クライアント情報を入力するだけで、GoogleスプレッドシートのDBを参照し最適な提案パターンをAIが即出力</p>
         </div>
         <div class="wf-saving">トップセールスの思考をプロンプト化<br>→ 誰が担当しても同じ提案品質</div>
       </div>
